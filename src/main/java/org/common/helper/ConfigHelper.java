@@ -11,7 +11,7 @@ import java.util.Properties;
  */
 public class ConfigHelper {
 
-    private static final Properties CONFIG_PROPS= PropsUtil.loadProperties(ConfigConstant.CONFIG_FILE);
+    private static final Properties CONFIG_PROPS = PropsUtil.loadProperties(ConfigConstant.CONFIG_FILE);
 
     public static String getJdbcriver(){
         return PropsUtil.getString(CONFIG_PROPS, ConfigConstant.JDBC_DRIVER);

@@ -5,6 +5,7 @@ import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 import org.apache.commons.dbutils.handlers.MapListHandler;
+import org.common.constant.ConfigConstant;
 import org.common.util.PropsUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -44,11 +45,11 @@ public class DataBaseHelper {
 
         CONNECTION_HOLDER = new ThreadLocal<>();
         QUERY_RUNNER = new QueryRunner();
-        Properties properties= PropsUtil.loadProperties("jbconfig.properties");
-        DRIVER = PropsUtil.getString(properties, "jdbc.driver");
-        URL = PropsUtil.getString(properties, "jdbc.url");
-        USERNAME = PropsUtil.getString(properties, "jdbc.username");
-        PASSWORD = PropsUtil.getString(properties, "jdbc.password");
+
+        DRIVER = ConfigHelper.getJdbcriver();
+        URL = ConfigHelper.getJdbcUrl();
+        USERNAME = ConfigHelper.getJdbcUsername();
+        PASSWORD = ConfigHelper.getJdbcPassword();
 
 //        try {
 //            Class.forName(DRIVER);

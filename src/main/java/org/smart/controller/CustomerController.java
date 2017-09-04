@@ -23,4 +23,6 @@ public class CustomerController {
         List<Customer> customerList = customerService.getCustomerList();
         return new View("customer.jsp").addModel("customerList", customerList);
     }
+
+
 }
