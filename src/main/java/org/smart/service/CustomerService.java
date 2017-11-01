@@ -1,23 +1,23 @@
 package org.smart.service;
 
+import org.common.annotation.Aspect;
 import org.common.annotation.Service;
 import org.common.helper.DataBaseHelper;
+import org.common.proxy.AspectProxy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.smart.model.Customer;
 
-import java.sql.*;
-import java.util.ArrayList;
+import java.lang.reflect.Method;
 import java.util.List;
 
 /**
  * Created by paul on 2017/8/17.
  */
 @Service
-public class CustomerService {
+public class CustomerService{
 
     private static final Logger LOGGER = LoggerFactory.getLogger(CustomerService.class);
-
 
     public List<Customer>getCustomerList(){
 //        Connection conn = null;
